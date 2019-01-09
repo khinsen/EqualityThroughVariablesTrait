@@ -8,3 +8,5 @@ Metacello new
     repository: 'github://khinsen/EqualityThroughVariablesTrait/src';
     load.
 ```
+
+Note: this trait is convenient but its equality test is very slow because it gets the list of all instance variable names for every single comparison. I am still looking for a more efficient way to do this, e.g. by looking up the names only once per class.
