@@ -16,7 +16,8 @@ EqualityThroughVariables >> = anObject [
 				ifFalse: [^false]. ].
 	class isVariable
 		ifTrue:
-			[ 1 to: self basicSize do:
+			[ self basicSize = anObject basicSize ifFalse: [^false].
+			  1 to: self basicSize do:
 				[ :index |
 					(self basicAt: index) = (anObject basicAt: index)
 						ifFalse: [ ^false ] ] ].
